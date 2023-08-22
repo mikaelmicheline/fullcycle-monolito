@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+
+  node:
+    build: 
+      context: .
+    container_name: node
+    tty: true
+    volumes:
+      - .:/usr/src/app
+    
