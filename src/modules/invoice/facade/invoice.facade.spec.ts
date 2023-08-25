@@ -14,7 +14,7 @@ describe("InvoiceFacade test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([InvoiceModel, InvoiceItemModel]);
+    sequelize.addModels([InvoiceModel, InvoiceItemModel]);
     await sequelize.sync();
   });
 
@@ -124,4 +124,5 @@ describe("InvoiceFacade test", () => {
     expect(output.items[1].name).toBe(inputGenerate.items[1].name);    
     expect(output.items[1].price).toBe(inputGenerate.items[1].price); 
   });
+  
 });

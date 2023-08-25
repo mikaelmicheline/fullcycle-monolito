@@ -1,10 +1,5 @@
 import UseCaseInterface from "../../@shared/usecase/use-case.interface";
-import InvoiceFacadeInterface, {
-  GenerateInvoiceFacadeInputDto,
-  GenerateInvoiceFacadeOutputDto,
-  FindInvoiceFacadeInputDto,
-  FindInvoiceFacadeOutputDto
-} from "./facade.interface";
+import InvoiceFacadeInterface, { GenerateInvoiceFacadeInputDto, GenerateInvoiceFacadeOutputDto, FindInvoiceFacadeInputDto, FindInvoiceFacadeOutputDto } from "./facade.interface";
 
 export default class InvoiceFacade implements InvoiceFacadeInterface {
   constructor(

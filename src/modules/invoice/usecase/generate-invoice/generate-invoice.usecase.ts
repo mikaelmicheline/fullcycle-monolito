@@ -4,18 +4,12 @@ import Invoice from "../../domain/entity/invoice";
 import InvoiceItem from "../../domain/entity/invoice-item";
 import Address from "../../domain/value-object/address";
 import InvoiceGateway from "../../gateway/invoice.gateway";
-import {
-  GenerateInvoiceUseCaseInputDto,
-  GenerateInvoiceUseCaseOutputDto,
-} from "./generate-invoice.dto";
-
+import { GenerateInvoiceUseCaseInputDto, GenerateInvoiceUseCaseOutputDto } from "./generate-invoice.dto";
 
 export default class GenerateInvoiceUseCase implements UseCaseInterface {
   constructor(private invoiceRepository: InvoiceGateway) {}
 
-  async execute(
-    input: GenerateInvoiceUseCaseInputDto
-  ): Promise<GenerateInvoiceUseCaseOutputDto> {
+  async execute(input: GenerateInvoiceUseCaseInputDto): Promise<GenerateInvoiceUseCaseOutputDto> {
     const address = new Address({
       street: input.street,
       number: input.number,

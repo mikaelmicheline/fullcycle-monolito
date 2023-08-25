@@ -1,5 +1,4 @@
 import { Column, HasMany, Model, PrimaryKey, Table } from "sequelize-typescript";
-import { NonAttribute } from "sequelize";
 import InvoiceItemModel from "./invoice-item.model";
 
 @Table({
@@ -38,10 +37,10 @@ export default class InvoiceModel extends Model {
   @HasMany(() => InvoiceItemModel)
   items: InvoiceItemModel[];
 
-  @Column({ allowNull: false, field: "created_at" })
+  @Column({ allowNull: false })
   createdAt: Date;
 
-  @Column({ allowNull: false, field: "updated_at" })
+  @Column({ allowNull: false })
   updatedAt: Date;
 }
 

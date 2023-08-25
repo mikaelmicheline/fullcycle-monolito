@@ -13,7 +13,7 @@ describe("PaymentFacade test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([TransactionModel]);
+    sequelize.addModels([TransactionModel]);
     await sequelize.sync();
   });
 
@@ -22,10 +22,6 @@ describe("PaymentFacade test", () => {
   });
 
   it("should create a transaction", async () => {
-    // const repository = new TransactionRepostiory();
-    // const usecase = new ProcessPaymentUseCase(repository);
-    // const facade = new PaymentFacade(usecase);
-
     const facade = PaymentFacadeFactory.create();
 
     const input = {

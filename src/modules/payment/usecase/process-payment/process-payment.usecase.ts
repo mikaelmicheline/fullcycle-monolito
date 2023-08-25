@@ -9,14 +9,14 @@ import {
 export default class ProcessPaymentUseCase implements UseCaseInterface {
   constructor(private transactionRepository: PaymentGateway) {}
 
-  async execute(
-    input: ProcessPaymentInputDto
-  ): Promise<ProcessPaymentOutputDto> {
+  async execute(input: ProcessPaymentInputDto): Promise<ProcessPaymentOutputDto> {
     const transaction = new Transaction({
       amount: input.amount,
       orderId: input.orderId,
     });
+
     transaction.process();
+
     const persistTransaction = await this.transactionRepository.save(
       transaction
     );
